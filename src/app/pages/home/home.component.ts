@@ -67,7 +67,7 @@ export class HomeComponent implements OnInit {
       airport.airportName.toLowerCase().includes(query.toLowerCase())
     );
   }
-  /*validateForm(): boolean {
+  validateForm(): boolean {
     if (!this.selectedDepartureAirport || !this.selectedArrivalAirport) {
       alert('Please select both departure and arrival airports.');
       return false;
@@ -84,11 +84,11 @@ export class HomeComponent implements OnInit {
     }
 
     return true;
-  }*/
+  }
   searchFlights() {
-    /*if (!this.validateForm()) {
+    if (!this.validateForm()) {
       return;
-    }*/
+    }
     this.flightService
       .searchFlights(
         this.selectedDepartureAirport,
