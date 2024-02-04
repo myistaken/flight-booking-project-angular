@@ -70,12 +70,12 @@
           <th>Airline</th>
           <th>Departure Airport</th>
           <th>Arrival Airport</th>
-          <th (click)="sortFlights('departureDate')">Departure Date</th>
+          <th (click)="sortFlights('departureDate')">↕ Departure Date</th>
           <th (click)="sortFlights('returnDate')" *ngIf="!oneWay">
-            Return Date
+            ↕ Return Date
           </th>
-          <th (click)="sortFlights('duration')">Flight Duration</th>
-          <th (click)="sortFlights('price')">Price</th>
+          <th (click)="sortFlights('duration')">↕ Flight Duration</th>
+          <th (click)="sortFlights('price')">↕ Price</th>
         </tr>
       </thead>
       <tbody>
