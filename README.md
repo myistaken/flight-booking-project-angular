@@ -1,27 +1,46 @@
-# FlightBookingProject
+# Flight Search Project
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.1.2.
+## Overview
+This project provides a simple representation of flight data, allowing users to search for flights between different airports. The data includes details such as departure and arrival airports, dates, durations, prices, and airline information.
 
-## Development server
+## Data Structure
+The flight data is organized in a JSON format with two main sections: "flights" and "airports."
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+### Flights
+Each flight object includes the following fields:
+- `id`: Unique identifier for the flight.
+- `departureAirport`: Three-letter code for the departure airport.
+- `arrivalAirport`: Three-letter code for the arrival airport.
+- `departureDate`: UTC timestamp for the departure date and time.
+- `returnDate`: UTC timestamp for the return date and time.
+- `duration`: Duration of the flight in minutes.
+- `price`: Cost of the flight.
+- `airline`: Airline providing the flight service.
 
-## Code scaffolding
+### Airports
+The airport data includes details about various airports, such as their identifier, three-letter code, and name.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Requirements
+To run and develop this project, ensure you have the following software installed on your machine:
 
-## Build
+- [Node.js](https://nodejs.org/): JavaScript runtime built on Chrome's V8 JavaScript engine.
+- [npm](https://www.npmjs.com/): Package manager for Node.js (included with Node.js).
+- [Angular CLI](https://angular.io/cli): Command-line interface for Angular applications.
+- [json-server](https://github.com/typicode/json-server): A simple JSON server to mock API responses.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Usage
+This project can be used as a starting point for implementing a flight search feature in an application. Developers can utilize the provided flight data to build a user interface for searching and displaying flight information.
 
-## Running unit tests
+## Getting Started
+1. Clone the repository: `git clone <repository-url>`
+2. Install project dependencies: `npm install`
+3. Start the JSON server and frontend simultaneously: `npm run server:all`
+   - This command uses `concurrently` to run both the JSON server (`json-server server/db.json`) and the Angular application (`ng serve`) concurrently.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+4. Explore the provided flight data in the `data.json` file.
+5. Customize the data or integrate it into your application as needed.
 
-## Running end-to-end tests
+## License
+This project is licensed under the [MIT License](LICENSE).
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Feel free to modify and expand this README to provide more specific information about your project and its setup.
