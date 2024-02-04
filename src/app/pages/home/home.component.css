@@ -1,0 +1,68 @@
+  .home {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+  }
+
+.form-item{
+    display: flex;
+    justify-content: start;
+    align-items: baseline;
+    margin-bottom: 20px;
+}
+  
+  label {
+    display: inline-block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+    width: 15%;
+  }
+
+  
+  input[type="date"],
+  input[list] {
+    width: 30%;
+    padding: 10px;
+    border: none;
+    background-color: #e8e8e8;
+    border-radius: 5px;
+  }
+  
+  button {
+    display: block;
+    width: 20%;
+    padding: 10px;
+    background-color: #000000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: red;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  th {
+    background-color: #000000;
+    color: #fff;
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  td {
+    padding: 10px;
+    border: 1px solid #e8e8e8;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #e8e8e8;
+  }
+  

@@ -1,0 +1,99 @@
+<div class="home">
+  <div class="user-form">
+    <div class="form-item">
+      <label for="oneWay">One-way Trip</label>
+      <input type="checkbox" id="oneWay" name="oneWay" [(ngModel)]="oneWay" />
+    </div>
+    <div class="form-item">
+      <label for="departureAirport">From</label>
+      <input
+        list="departureAirports"
+        [(ngModel)]="selectedDepartureAirport"
+        placeholder="Departure Airport"
+      />
+      <datalist id="departureAirports">
+        <option
+          *ngFor="let airport of filteredDepartureAirports"
+          [value]="airport.airportCode"
+        >
+          {{ airport.airportName }}
+        </option>
+      </datalist>
+    </div>
+
+    <div class="form-item">
+      <label for="arrivalAirport">To</label>
+      <input
+        list="arrivalAirports"
+        [(ngModel)]="selectedArrivalAirport"
+        placeholder="Arrival Airport"
+      />
+      <datalist id="arrivalAirports">
+        <option
+          *ngFor="let airport of filteredArrivalAirports"
+          [value]="airport.airportCode"
+        >
+          {{ airport.airportName }}
+        </option>
+      </datalist>
+    </div>
+    <div class="form-item">
+      <label for="departureDate">Departure Date</label>
+      <input
+        type="date"
+        id="departureDate"
+        name="departureDate"
+        [(ngModel)]="selectedDepartureDate"
+      />
+    </div>
+    <div class="form-item">
+      <label *ngIf="!oneWay" for="returnDate">Return Date</label>
+      <input
+        *ngIf="!oneWay"
+        type="date"
+        id="returnDate"
+        name="returnDate"
+        [(ngModel)]="selectedArrivalDate"
+      />
+    </div>
+
+    <button (click)="searchFlights()" type="button">
+      Search Flights <span class="icon">✈️</span>
+    </button>
+  </div>
+  <div *ngIf="loading">Loading...</div>
+  <div *ngIf="flightsList.length > 0">
+    <h2>Flight List</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Airline</th>
+          <th>Departure Airport</th>
+          <th>Arrival Airport</th>
+          <th (click)="sortFlights('departureDate')">Departure Date</th>
+          <th (click)="sortFlights('returnDate')" *ngIf="!oneWay">
+            Return Date
+          </th>
+          <th (click)="sortFlights('duration')">Flight Duration</th>
+          <th (click)="sortFlights('price')">Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let flight of flightsList">
+          <td>{{ flight.airline }}</td>
+          <td>{{ flight.departureAirport }}</td>
+          <td>{{ flight.arrivalAirport }}</td>
+          <td>{{ flight.departureDate | date : "medium" }}</td>
+          <td *ngIf="!oneWay">{{ flight.returnDate | date : "medium" }}</td>
+          <td>
+            {{ calculateFlightDuration(flight.duration) }}
+          </td>
+          <td>${{ flight.price }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <p *ngIf="showNoFlightsMessage">
+    No flights matching your search criteria were found!
+  </p>
+</div>
