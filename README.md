@@ -44,5 +44,6 @@ This project can be used as a starting point for implementing a flight search fe
 This project is licensed under the [MIT License](LICENSE).
 
 ## Screenshots
-![image](https://github.com/myistaken/flight-booking-project-angular/assets/102411484/caa66da3-34c5-4ced-961b-f710e3079f43)
+![image](https://github.com/myistaken/flight-booking-project-angular/assets/102411484/1edd2b06-7f91-4033-b293-66d18d419fe2)
+
 
